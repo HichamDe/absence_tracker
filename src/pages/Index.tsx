@@ -1,16 +1,39 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Shield, GraduationCap } from "lucide-react";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+export default function Index() {
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
+    <div className="min-h-screen flex items-center justify-center bg-background p-4">
+      <div className="w-full max-w-md space-y-4">
+        <div className="text-center mb-8">
+          <h1 className="text-3xl font-bold mb-2">Absence Tracker</h1>
+          <p className="text-muted-foreground">Student absence management system</p>
+        </div>
+        <Link to="/student" className="block">
+          <Card className="hover:border-primary/50 transition-colors cursor-pointer">
+            <CardHeader className="flex flex-row items-center gap-4">
+              <GraduationCap className="h-8 w-8 text-primary" />
+              <div>
+                <CardTitle>I'm a Student</CardTitle>
+                <CardDescription>Check your absence history</CardDescription>
+              </div>
+            </CardHeader>
+          </Card>
+        </Link>
+        <Link to="/login" className="block">
+          <Card className="hover:border-primary/50 transition-colors cursor-pointer">
+            <CardHeader className="flex flex-row items-center gap-4">
+              <Shield className="h-8 w-8 text-primary" />
+              <div>
+                <CardTitle>Admin Access</CardTitle>
+                <CardDescription>Manage students and absences</CardDescription>
+              </div>
+            </CardHeader>
+          </Card>
+        </Link>
+      </div>
     </div>
   );
-};
-
-const Index = PlaceholderIndex;
-
-export default Index;
+}
